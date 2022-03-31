@@ -122,11 +122,16 @@ public with sharing class GetRecordsByApex {
      * @author      Salesforce Binge
      * @website     https://salesforcebinge.com/
      * 
-     * @param  filter  GetRecordsFilter
+     * @param  String  fieldValue
      * @return String
      */
     public static String getQuotedValue(String fieldValue) {
-        String quotedValue ='\''+ fieldValue +'\'';
+        String quotedValue;
+        if (fieldValue == 'true' || fieldValue == 'false') {
+            quotedValue = fieldValue;
+        } else {
+            quotedValue = '\''+ fieldValue +'\'';
+        }
         return quotedValue;
     }
 
@@ -135,8 +140,8 @@ public with sharing class GetRecordsByApex {
      * @author      Salesforce Binge
      * @website     https://salesforcebinge.com/
      * 
-     * @param  filter  GetRecordsFilter
-     * @return String
+     * @param  List<String> fieldCollectionValue
+     * @return List<String>
      */
     public static List<String> getQuotedCollection(List<String> fieldCollectionValue) {
         List<String> quotedValues = new List<String>();
