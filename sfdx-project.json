@@ -1,0 +1,19 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "flow-IN-filter",
+            "versionName": "flow-IN-filter",
+            "versionNumber": "1.0.0.0"
+        }
+    ],
+    "name": "SalesforceBinge",
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "54.0",
+    "packageAliases": {
+        "flow-IN-filter": "0Ho5g000000kA0hCAE",
+        "flow-IN-filter@1.0.0-0": "04t5g000000hH6YAAU"
+    }
+}
