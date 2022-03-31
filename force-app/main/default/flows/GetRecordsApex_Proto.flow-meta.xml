@@ -3,14 +3,15 @@
     <actionCalls>
         <name>Call_GetRecordsByApex</name>
         <label>Call GetRecordsByApex</label>
-        <locationX>873</locationX>
-        <locationY>203</locationY>
+        <locationX>962</locationX>
+        <locationY>202</locationY>
         <actionName>GetRecordsByApex</actionName>
         <actionType>apex</actionType>
         <dataTypeMappings>
             <typeName>U__output</typeName>
             <typeValue>Contact</typeValue>
         </dataTypeMappings>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>fieldsToQuery</name>
             <value>
@@ -40,6 +41,7 @@
             <name>output</name>
         </outputParameters>
     </actionCalls>
+    <apiVersion>54.0</apiVersion>
     <assignments>
         <name>Add_AccountIds_to_List</name>
         <label>Add AccountIds to List</label>
@@ -60,7 +62,7 @@
         <name>Filter_1</name>
         <label>Filter 1</label>
         <locationX>518</locationX>
-        <locationY>203</locationY>
+        <locationY>202</locationY>
         <assignmentItems>
             <assignToReference>Filter1.filterField</assignToReference>
             <operator>Assign</operator>
@@ -89,8 +91,8 @@
     <assignments>
         <name>Filter_2</name>
         <label>Filter 2</label>
-        <locationX>632</locationX>
-        <locationY>203</locationY>
+        <locationX>633</locationX>
+        <locationY>201</locationY>
         <assignmentItems>
             <assignToReference>Filter2.filterField</assignToReference>
             <operator>Assign</operator>
@@ -113,14 +115,44 @@
             </value>
         </assignmentItems>
         <connector>
+            <targetReference>Filter_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Filter_3</name>
+        <label>Filter 3</label>
+        <locationX>730</locationX>
+        <locationY>201</locationY>
+        <assignmentItems>
+            <assignToReference>Filter3.filterField</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>IsAddressPopulated__c</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Filter3.operator</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>=</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Filter3.fieldValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
             <targetReference>Filters_to_List</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Filters_to_List</name>
         <label>Filters to List</label>
-        <locationX>741</locationX>
-        <locationY>203</locationY>
+        <locationX>847</locationX>
+        <locationY>201</locationY>
         <assignmentItems>
             <assignToReference>filters</assignToReference>
             <operator>Add</operator>
@@ -133,6 +165,13 @@
             <operator>Add</operator>
             <value>
                 <elementReference>Filter2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>filters</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Filter3</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -241,6 +280,14 @@
     </variables>
     <variables>
         <name>Filter2</name>
+        <apexClass>GetRecordsFilter</apexClass>
+        <dataType>Apex</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Filter3</name>
         <apexClass>GetRecordsFilter</apexClass>
         <dataType>Apex</dataType>
         <isCollection>false</isCollection>
