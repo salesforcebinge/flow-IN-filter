@@ -14,8 +14,10 @@ So I created this component that lets you use this implementation and extend the
 # BEST PART:
 - You do not need development skills to use this component.
 - You can install without having to copy paste the code in your org.
-- [SANDBOX](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH6YAAU) 
-- [PROD](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH6YAAU) 
+- [SANDBOX](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH8o) (Unmanaged Package)
+- [PROD](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH8o) (Unmanaged Package)
+- [SANDBOX](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH6YAAU) (Unlocked Package)
+- [PROD](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5g000000hH6YAAU) (Unlocked Package)
 - A proto flow is also available in the repo for references, which you can delete if you do not need it.
 
 # UPDATES:
